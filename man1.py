@@ -59,11 +59,8 @@ if __name__ == '__main__':
    b1 = Button(root, text='Submit',
           command=(lambda e=ents: submit(e)))
    b1.pack(side=LEFT, padx=5, pady=5)
-   b2 = Button(root, text='Save',
-          command=(lambda e=ents: save(e)))
+   b2 = Button(root, text='Quit', command=root.quit)
    b2.pack(side=LEFT, padx=5, pady=5)
-   b3 = Button(root, text='Quit', command=root.quit)
-   b3.pack(side=LEFT, padx=5, pady=5)
    root.mainloop()
 
 
