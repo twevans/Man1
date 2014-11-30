@@ -6,10 +6,10 @@ fields = ('R1', 'R2', 'I1', 'I2')
 
 def submit(entries):
 	print "Generating..."
-	l1 = float(entries['R1'].get())	# -2.5
-   	l2 = float(entries['R2'].get())	# 1
-   	l3 = float(entries['I1'].get())	# -1.5
-   	l4 = float(entries['I2'].get())	# 1.5
+	l1 = float(entries['R1'].get())	# -0.7447108
+   	l2 = float(entries['R2'].get())	# -0.742423
+   	l3 = float(entries['I1'].get())	# 0.1302584
+   	l4 = float(entries['I2'].get())	# 0.1325462
 	inc = (l2-l1)/1000.0
 	its = 1000.0
 	S = 1.0
@@ -28,12 +28,12 @@ def submit(entries):
 					break
 			X.append(l1 + x*inc)
 			Y.append(l3 + y*inc)
-			Z.append(i / its)
+			Z.append(log10(i))
 			z = 0
 	fig, ax = plt.subplots()
 	im = ax.scatter(X, Y, c = Z, s = S, cmap = col, linewidths = 0)
 	fig.colorbar(im, ax=ax)
-	im.set_clim(0.0, 1.0)
+	im.set_clim(0.0, 3.0)
 	show()
 
 def makeform(root, fields):
