@@ -1,9 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 from pylab import *
 from Tkinter import *
-fields = (('R1',-2.5), ('R2',0.5), ('I1',-1.5), ('I2',1.5))
-
+fields = (('R1',-2), ('R2',1), ('I1',-1.5), ('I2',1.5))
 
 def submit(entries):
 	print "Generating..."
@@ -39,23 +38,15 @@ def submit(entries):
 
 def makeform(root, fields):
    entries = {}
-   #initvals = [1,2,4,5]
    for field, default in fields:
       row = Frame(root)
       lab = Label(row, width=22, text=field+": ", anchor='w')
       ent = Entry(row)
       ent.insert(0,default)
-      
-          
-
       row.pack(side=TOP, fill=X, padx=5, pady=5)
       lab.pack(side=LEFT)
       ent.pack(side=RIGHT, expand=YES, fill=X)
       entries[field] = ent
-
-            
-
-      
    return entries
 
 
