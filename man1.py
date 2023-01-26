@@ -24,7 +24,7 @@ def submit(entries):
 			c = (l1 + x*inc) + (l3 + y*inc)*(1j)
 			for i in range(1, int(its) + 1):
 				z = z**2 + c
-				if abs(z) > 2:
+				if abs(z) > 3:
 					break
 			X.append(l1 + x*inc)
 			Y.append(l3 + y*inc)
